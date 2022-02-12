@@ -52,14 +52,6 @@ jobs:
        working-directory: 'spec'
        run: curl -X GET --url "https://www.apimatic.io/api/code-generations/${{ steps.parse_output.outputs.codegenId }}/generated-sdk" --header "Authorization:X-Auth-Key ${{ secrets.API_KEY }}" -o java-sdk.zip
     
-     - name: Check-out static-portal-sdk repo
-       uses: actions/checkout@v2
-       with:
-        repository: 'apimatic/static-portal-sdk'
-        ref: 'master'
-        token: ${{secrets.ACTIONS_PAT}}
-        
-                
      - name: list 
        run: ls
        working-directory: 'spec'
@@ -74,6 +66,15 @@ jobs:
     #    working-directory: 'spec/java-sdk'
     #    run: cp -r -f -a . ../../../sdk --verbose
       
+         
+     - name: Check-out static-portal-sdk repo
+       uses: actions/checkout@v2
+       with:
+        repository: 'apimatic/static-portal-sdk'
+        ref: 'master'
+        token: ${{secrets.ACTIONS_PAT}}
+        
+        
      - name: Push updated SDK
        working-directory: 'java-sdk'
        run: |
