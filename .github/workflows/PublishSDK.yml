@@ -88,4 +88,4 @@ jobs:
          git config --global user.name 'sohaibtariq'
          git config --global user.email 'sohaib.tariq@apimatic.com'
          git commit -m "updated via github CI"
-         git push origin main     
+         git push origin master     
