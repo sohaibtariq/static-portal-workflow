@@ -58,14 +58,16 @@ jobs:
         repository: 'apimatic/static-portal-sdk'
         ref: 'master'
         token: ${{secrets.ACTIONS_PAT}}
-          
-     - name: Extract generated SDK
-       working-directory: 'spec'
-       run: unzip -qq java-sdk.zip -d java-sdk
         
+                
      - name: list 
        run: ls
        working-directory: 'spec'
+        
+     - name: Extract generated SDK
+       working-directory: 'spec'
+       run: unzip -qq java-sdk.zip -d java-sdk
+
 
     
     #  - name: Copy SDK files
