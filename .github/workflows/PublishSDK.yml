@@ -82,7 +82,7 @@ jobs:
       
         
      - name: Push updated SDK
-       working-directory: '.spec/java-sdk'
+       working-directory: 'sdk-repo'
        run: |
          git add .
          git config --global user.name 'sohaibtariq'
