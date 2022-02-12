@@ -64,22 +64,22 @@ jobs:
        run: ls
        working-directory: 'spec'
 
-    
-    #  - name: Copy SDK files
-    #    working-directory: 'spec/java-sdk'
-    #    run: cp -r -f -a . ../../../sdk --verbose
-      
-
-     
+       
      - name: Check-out static-portal-sdk repo
        uses: actions/checkout@v2
        with:
         repository: 'apimatic/static-portal-sdk'
         ref: 'master'
         token: ${{secrets.ACTIONS_PAT}}
+        path: sdk-repo
       
      - name: list 
        run: ls 
+        
+     - name: Copy SDK files
+       working-directory: 'spec/java-sdk'
+       run: cp -r -f -a . ../../sdk-repo --verbose
+      
         
      - name: Push updated SDK
        working-directory: '.spec/java-sdk'
