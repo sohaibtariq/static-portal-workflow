@@ -60,7 +60,8 @@ jobs:
        working-directory: 'spec'
        run: unzip -qq java-sdk.zip -d java-sdk
 
-
+     - name: list 
+       run: ls
     
     #  - name: Copy SDK files
     #    working-directory: 'spec/java-sdk'
